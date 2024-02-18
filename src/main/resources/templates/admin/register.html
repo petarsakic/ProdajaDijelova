@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registracija Novog Korisnika</title>
+    <!-- Uključivanje Bootstrap CSS-a -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #404040;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <section class="registration-section bg-dark text-white p-4">
+        <h2 class="text-center">Registracija Novog Korisnika</h2>
+        <form th:action="@{/auth/register}" method="post" th:object="${user}">
+            <div class="form-group">
+                <label for="firstName">Unesite vaše ime:</label>
+                <input type="text" id="firstName" class="form-control" placeholder="Unesite vaše Ime" th:field="*{ime}"/>
+            </div>
+            <div th:if="${#fields.hasErrors('ime')}" class="invalid-feedback" th:errors="*{ime}"></div>
+
+            <div class="form-group">
+                <label for="lastName">Unesite vaše prezime:</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Prezime" th:field="*{prezime}" />
+            </div>
+            <div th:if="${#fields.hasErrors('prezime')}" class="invalid-feedback" th:errors="*{prezime}"></div>
+
+            <div class="form-group">
+                <label for="email">Unesite vašu email adresu:</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email adresa" th:field="*{email}"/>
+            </div>
+            <div th:if="${#fields.hasErrors('prezime')}" class="invalid-feedback" th:errors="*{email}"></div>
+
+            <div class="form-group">
+
+                <label for="password">Unesite vašu lozinku:</label>
+                <input type="password" id="password" name="password" class="form-control" th:field="*{lozinka}" placeholder="Lozinka">
+            </div>
+            <div th:if="${#fields.hasErrors('lozinka')}" class="invalid-feedback" th:errors="*{lozinka}"></div>
+            <div class="form-group">
+                <label for="confirmPassword">Potvrdite vašu lozinku:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"  th:field="*{potvrdaLozinke}" placeholder="Potvrdite lozinku">
+            </div>
+            <div th:if="${#fields.hasErrors('potvrdaLozinke')}" class="invalid-feedback" th:errors="*{potvrdaLozinke}"></div>
+            <input type="hidden" name="roles" value="USER" />
+            <button type="submit" class="btn btn-success w-100">Registriraj se</button>
+        </form>
+    </section>
+</div>
+
+<!-- Uključivanje Bootstrap JS-a i jQuery-a (ako već nisu uključeni) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

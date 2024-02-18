@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista Korisnika</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body  style="background-color: #404040; color: white;">
+<div class="container mt-5">
+    <h2>Lista Korisnika</h2>
+    <a href="/admin/add" class="btn btn-success">Dodaj Novog Korisnika</a>
+    <a class="btn btn-success" href="#" onclick="logout()">Odjava</a>
+    <table class="table">
+        <thead>
+        <tr style="color: white;">
+            <th >Ime</th>
+            <th >Prezime</th>
+            <th >Email</th>
+            <th >Akcije</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="color: white;" th:each="user : ${users}">
+            <td th:text="${user.ime}">Ime</td>
+            <td th:text="${user.prezime}">Prezime</td>
+            <td th:text="${user.email}">Email</td>
+            <td>
+                <span th:each="role : ${user.roles}" class="badge badge-primary mr1" th:text="${role}"></span>
+            </td>
+            <td>
+                <div>
+                    <form th:action="@{/admin/delete/{userId}(userId=${user.id})}" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Obriši</button>
+                    </form>
+                    <a style="color: white;" th:href="@{/admin/edit/{userId}(userId=${user.id})}" class="btn btn-success d-inline-block ">Uredi</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

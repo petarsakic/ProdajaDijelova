@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uspješna narudžba</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #404040;
+            color: green;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 100px; /* Prilagodite ovu vrijednost prema potrebi za vertikalnim centriranjem */
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="display-2">Vaša narudžba je uspješno zaprimljena</h2>
+    <a href="/user" class="btn btn-success btn-lg mt-3">Povratak na korisnički panel</a>
+</div>
+<div class="container">
+    <a class=" btn btn-success btn-lg" href="#" onclick="logout()">Odjava</a>
+</div>
+
+<script>
+    function logout() {
+        window.location.href = '/';
+    }
+</script>
+</body>
+</html>

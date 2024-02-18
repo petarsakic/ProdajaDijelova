@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Prodaja dijelova</title>
+    <link th:href="@{Static/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">
+        <img src="Static/images/logo.PNG" alt="Logo" height="70">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-5">
+            <li class="nav-item">
+                <a class="nav-link" href="">Početna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#dijelovi">Dijelovi</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#kontakt">Kontakt</a>
+            </li>
+        </ul>
+    </div>
+    <div class="ml-auto d-flex align-items-center">
+        <div>
+            <a class=" tekst nav-link " href="../user/login" >Login</a>
+        </div>
+    </div>
+</nav>
+<section id="početna" class="image-section">
+    <div class="overlay">
+        <h2 class="text-center mt-5">Prodaja dijelova: Pronađite dijelove koje tražite!</h2>
+    </div>
+
+    <div class="container text-center">
+        <p class="lead text-left">Pronađite najkvalitetnije dijelove za vaše vozilo. </p>
+        <div class="text-left">
+            <a href="/user/dashboard" class="btn btn-success btn-lg">Pregledaj ponudu</a>
+        </div>
+    </div>
+</section>
+<section id="dijelovi" class="image-container">
+    <div class="row">
+        <h2> Dostupni dijelovi:</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Brisači</h3>
+            <p>Opis brisača...</p>
+            <a href="#">Kupi sada</a>
+        </div>
+        <div class="col-md-4">
+            <h3>Auto gume</h3>
+            <p>Opis auto guma...</p>
+            <a href="#">Kupi sada</a>
+        </div>
+        <div class="col-md-4">
+            <h3>Auto akumulatori</h3>
+            <p>Opis auto akumulatora...</p>
+            <a href="#">Kupi sada</a>
+        </div>
+    </div>
+</section>
+<section id="kontakt" class="contact-section">
+    <div class="container">
+        <h2 class="display-2">Kontaktirajte nas</h2>
+        <p class="lead">Za sve upite o dostupnosti dijelova i narudžbama, slobodno nas kontaktirajte.</p>
+        <h3 class="display-4">Prodaja dijelova d.o.o</h3>
+        <p class="lead">
+            Adresa: Mostar, Mostar<br>
+            Telefon: +123 456 789<br>
+            Email: info@prodaja-dijelova.com
+        </p>
+    </div>
+</section>
+<script>
+    function logout() {
+        window.location.href = '/';
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
