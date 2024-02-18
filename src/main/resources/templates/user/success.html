@@ -29,7 +29,9 @@
     <a href="/user" class="btn btn-success btn-lg mt-3">Povratak na korisnički panel</a>
 </div>
 <div class="container">
-    <a class=" btn btn-success btn-lg" href="#" onclick="logout()">Odjava</a>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="btn btn-danger">Odjavi se</button>
+    </form>
 </div>
 
 <script>

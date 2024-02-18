@@ -32,7 +32,9 @@
     </div>
     <div class="ml-auto d-flex align-items-center">
         <div>
-            <a class="tekst nav-link" href="#" onclick="logout()">Odjava</a>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit" class="btn btn-danger">Odjavi se</button>
+            </form>
         </div>
     </div>
 </nav>
@@ -77,11 +79,7 @@
     </div>
 </section>
 
-<script>
-    function logout() {
-        window.location.href = '/';
-    }
-</script>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

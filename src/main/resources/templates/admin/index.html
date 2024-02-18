@@ -8,7 +8,9 @@
 <div class="container mt-5">
     <h2>Lista Korisnika</h2>
     <a href="/admin/add" class="btn btn-success">Dodaj Novog Korisnika</a>
-    <a class="btn btn-success" href="#" onclick="logout()">Odjava</a>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="btn btn-danger">Odjavi se</button>
+    </form>
     <table class="table">
         <thead>
         <tr style="color: white;">
